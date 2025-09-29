@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Waifu Gacha Bot - Discord</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="https://github.com/LaluDeyndra/DiscordBot/blob/main/assets/images/waifu%20images/anime%20icon.jpeg?raw=true" />
+  </head>
+  <body class="bg-gradient-to-b from-gray-900 to-gray-800 text-white font-sans">
+    <!-- Navbar -->
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-pink-500">WaifuGacha</h1>
+      <div class="space-x-6">
+        <a href="#fitur" class="hover:text-pink-400">Fitur</a>
+        <a href="#invite" class="hover:text-pink-400">Invite</a>
+        <a href="#footer" class="hover:text-pink-400">Terms & Privacy</a>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="text-center py-20 px-6">
+      <h2 class="text-5xl font-bold mb-4">✨ Gacha Waifu & Husbando Favoritmu di Discord!</h2>
+      <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">Temukan karakter favoritmu, kumpulkan, dan pamerkan koleksimu! Coba keberuntunganmu sekarang langsung di server Discord.</p>
+      <a
+        href="https://discord.com/oauth2/authorize?client_id=1374750149049581578&permissions=2147567616&integration_type=0&scope=applications.commands+bot"
+        class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-8 rounded-full text-lg transition duration-300"
+        id="invite"
+        target="_blank"
+      >
+        🚀 Invite Bot Sekarang
+      </a>
+    </section>
+
+    <!-- Fitur -->
+    <section id="fitur" class="bg-gray-800 py-16 px-6">
+      <h3 class="text-3xl font-bold text-center mb-12">🎯 Kenapa Harus WaifuGacha?</h3>
+      <div class="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+        <div class="p-6 bg-gray-900 rounded-2xl shadow-lg hover:shadow-pink-500/30 transition">
+          <h4 class="text-xl font-semibold mb-2">🔥 Sistem Rarity</h4>
+          <p class="text-gray-400">Mulai dari Common sampai Legendary! Setiap gacha penuh kejutan.</p>
+        </div>
+        <div class="p-6 bg-gray-900 rounded-2xl shadow-lg hover:shadow-pink-500/30 transition">
+          <h4 class="text-xl font-semibold mb-2">📊 Koleksi & Statistik</h4>
+          <p class="text-gray-400">Lacak semua karakter yang kamu dapatkan dan tunjukkan koleksimu ke teman-teman.</p>
+        </div>
+        <div class="p-6 bg-gray-900 rounded-2xl shadow-lg hover:shadow-pink-500/30 transition">
+          <h4 class="text-xl font-semibold mb-2">⚡️ Perintah Mudah</h4>
+          <p class="text-gray-400">Hanya dengan <code>/gacha</code>, kamu bisa langsung memulai petualangan gacha!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-gray-900 py-8 text-center text-gray-400 text-sm">
+      <p>&copy; 2025 WaifuGacha Bot. All rights reserved.</p>
+      <div class="mt-4 space-x-4">
+        <a href="https://laludeyndra.github.io/DiscordBot/" class="hover:text-pink-400" target="_blank">📜 Terms & Privacy</a>
+      </div>
+    </footer>
+
+    <!-- Script -->
+    <script>
+      document.getElementById('invite').addEventListener('click', () => {
+        setTimeout(() => {
+          alert('✅ Terima kasih sudah menambahkan WaifuGacha Bot ke servermu!\n💡 Ketik perintah /gacha-help di Discord untuk melihat panduan lengkap dan mekanik botnya.');
+        }, 800); // sedikit delay supaya muncul setelah klik
+      });
+    </script>
+  </body>
+</html>
