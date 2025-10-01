@@ -37,6 +37,7 @@
         href="https://discord.com/oauth2/authorize?client_id=1374750149049581578&permissions=2147567616&integration_type=0&scope=applications.commands+bot"
         class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-8 rounded-full text-lg transition duration-300"
         target="_blank"
+        id="inpit"
       >
         🚀 Invite the Bot
       </a>
@@ -78,7 +79,7 @@
       });
 
       // SweetAlert after clicking invite
-      document.getElementById('invite').addEventListener('click', () => {
+      document.getElementById('inpit').addEventListener('click', () => {
         setTimeout(() => {
           Swal.fire({
             title: '🔐 Bot Has Requested Access',
