@@ -33,6 +33,15 @@
     <section class="text-center pt-32 pb-20 px-6" id="invite">
       <h2 class="text-4xl md:text-5xl font-bold mb-4">✨ Gacha Your Favorite Waifu & Husbando on Discord!</h2>
       <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto" id="features">Discover your favorite characters, collect them, and show off your collection! Try your luck now — directly on your Discord server.</p>
+      <div class="flex justify-center mb-6">
+        <span id="bot-status" class="inline-flex items-center px-4 py-2 rounded-full bg-gray-800 text-gray-300 font-medium shadow transition-all duration-300">
+          <svg class="animate-spin h-5 w-5 mr-2 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+          </svg>
+          Checking bot status...
+        </span>
+      </div>
       <a
         href="https://discord.com/oauth2/authorize?client_id=1374750149049581578&permissions=2147567616&integration_type=0&scope=applications.commands+bot"
         class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-8 rounded-full text-lg transition duration-300"
@@ -96,6 +105,36 @@
           });
         }, 800);
       });
+
+      async function updateBotStatus() {
+        const statusEl = document.getElementById('bot-status');
+        try {
+          // Ganti URL ini dengan URL ngrok kamu
+          const res = await fetch('https://unmoldering-piddly-celinda.ngrok-free.dev/ping', {
+            headers: {
+              'ngrok-skip-browser-warning': 'any-value',
+            },
+          });
+          const data = await res.json();
+
+          if (data.status === 'online') {
+            statusEl.textContent = `✅ Bot Status: ONLINE (${data.tag || ''})`;
+            statusEl.classList.remove('text-gray-300', 'text-red-400', 'text-yellow-400');
+            statusEl.classList.add('text-green-400');
+          } else {
+            statusEl.textContent = '❌ Bot Status: OFFLINE';
+            statusEl.classList.remove('text-gray-300', 'text-green-400', 'text-yellow-400');
+            statusEl.classList.add('text-red-400');
+          }
+        } catch (err) {
+          statusEl.textContent = '❌ Bot Status: OFFLINE';
+          statusEl.classList.remove('text-gray-300', 'text-green-400', 'text-yellow-400');
+          statusEl.classList.add('text-red-400');
+        }
+      }
+
+      // Jalankan saat halaman selesai dimuat
+      window.addEventListener('load', updateBotStatus);
     </script>
   </body>
 </html>
